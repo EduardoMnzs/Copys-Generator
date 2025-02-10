@@ -1,6 +1,7 @@
 from senha import API_KEY
-from rules.emprego import REGRAS_EMPREGO, LINKS_FABIO_EMPREGO
+from rules.emprego import REGRAS_EMPREGO, LINKS_FABIO_EMPREGO, LINKS_DAVID_EMPREGO
 from rules.emprestimo import REGRAS_EMPRESTIMO, TEXTO_BASE, LINKS_FABIO_ES, LINKS_FINANZACREDIT_ES, LINKS_NIVALDO_ES, LINKS_ROOTS_ES
+from rules.cartao import REGRAS_CARTAO, LINKS_NIVALDO_CARTAO
 import google.generativeai as genai
 import os
 import time
@@ -39,8 +40,9 @@ while True:
     print("Selecione o tipo de copy:\n")
     print("1 - Emprego")
     print("2 - Empréstimo")
+    print("3 - Cartão")
 
-    opcao_tipo = obter_escolha("\nDigite o número correspondente: ", ["0", "1", "2"])
+    opcao_tipo = obter_escolha("\nDigite o número correspondente: ", ["0", "1", "2", "3"])
     if opcao_tipo == "0":
         continue 
     
@@ -50,6 +52,14 @@ while True:
         print("\nOpção escolhida: EMPREGO")
         clientes_disponiveis = {
             "1": ("Fábio", LINKS_FABIO_EMPREGO),
+            "2": ("David", LINKS_DAVID_EMPREGO),
+        }
+    elif opcao_tipo == "3":
+        tipo = "Cartão"
+        regras = REGRAS_CARTAO
+        print("\nOpção escolhida: CARTÃO")
+        clientes_disponiveis = {
+            "1": ("Nivaldo", LINKS_NIVALDO_CARTAO),
         }
     else:
         tipo = "Empréstimo"
@@ -87,7 +97,7 @@ while True:
         nomes_arquivos = [
             f"{dia}-{str(i).zfill(2)}.txt"
             for dia in ["segunda", "terca", "quarta", "quinta", "sexta", "sabado", "domingo"]
-            for i in range(1, 5)
+            for i in range(1, 6)
         ]
 
         for nome_arquivo in nomes_arquivos:
@@ -101,7 +111,7 @@ while True:
 
                 print(f"Resposta salva em: {caminho_arquivo}")
 
-            time.sleep(10)
+            time.sleep(5)
 
         print("\nTodos os arquivos foram gerados com sucesso!")
         exit()

@@ -1,5 +1,5 @@
-REGRAS_EMPREGO = """
-- Altere esta copy para o ramo de emprego em espanhol;
+REGRAS_CARTAO = """
+- Altere esta copy para o ramo de cartão em espanhol;
 - Considere como base o texto;
 - Não cite sobre empréstimos, créditos ou finanças;
 - Não use termos técnicos;
@@ -30,16 +30,10 @@ Tienes la opción de avanzar para obtener un préstamo de hasta $5,000. Solo nec
 Haz clic en el enlace a continuación para conocer más y continuar con el proceso de manera simple y segura.
 """
 
-LINKS_FABIO_EMPREGO = """
+LINKS_NIVALDO_CARTAO = """
 Lista de links para adicionar ao final de cada texto:
-- https://linktr.ee/jobsjobs01
-- https://linktr.ee/jobsjobs02
-- https://bit.ly/jobsjobsusa03
-- https://linktr.ee/jobsjob04
-- https://bit.ly/jobsjobs05
-"""
-
-LINKS_DAVID_EMPREGO = """
-Lista de links para adicionar ao final de cada texto:
-- https://bit.ly/usajobsprob
+- https://bit.ly/tarjetaprobadapro
+- https://bit.ly/tarjetaprobadapro01
+- https://bit.ly/tarjetaprobadapro02
+- https://bit.ly/tarjetaprobadapro03
 """
